@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <title>Speech To Text</title>
+  </head>
+  <body
+    class="container pt-5 bg-dark"
+    style="
+      background-image: linear-gradient(
+        to right top,
+        #949ba7,
+        #6585c2,
+        #336cd9,
+        #004ce7,
+        #1f12eb
+      );
+    "
+  >
+    <div class="mt-4" id="div_language">
+      <h2 class="mb-3 text-light">Select Language</h2>
+      <select
+        class="form-select bg-secondary text-light"
+        id="select_language"
+        onchange="updateCountry()"
+      ></select>
+      <select
+        class="form-select bg-secondary text-light mt-2"
+        id="select_dialect"
+      ></select>
+    </div>
+    <h2 class="mt-4 text-light">Transcript</h2>
+    <div
+      class="p-3"
+      style="border: 1px solid white; height: 300px; border-radius: 8px"
+    >
+      <span id="final" class="text-light"></span>
+      <span id="interim" class="text-secondary"></span>
+    </div>
+    <div
+      class="mt-4"
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div>
+        <button class="btn btn-success" id="start">Start</button>
+        <button class="btn btn-danger" id="stop">Stop</button>
+        <div class="lead mt-3 text-light" style="font-weight: 500">
+          Tu clear the text box, reload the page.
+        </div>
+      </div>
+      <div>
+        <button class="button" type="button">
+          <img src="https://s2.svgbox.net/octicons.svg?ic=copy" alt="Icon" />
+        </button>
+      </div>
+    </div>
+    <p id="status" class="lead mt-3 text-light" style="display: none">
+      Listenting ...
+    </p>
+  </body>
+  <script src="./speechRecognition.js"></script>
+  <script src="./language.js"></script>
+</html>
